@@ -24,20 +24,28 @@ const models = [
 
 const examplePrompts = [
   {
-    title: 'What are the advantages',
-    subtitle: 'of using Next.js?'
+    title: "How can I calculate",
+    subtitle: "my net worth and why is it important?"
   },
   {
-    title: 'Write code that',
-    subtitle: 'demonstrates dijkstra\'s algorithm'
+    title: "What are some effective strategies for",
+    subtitle: "managing debt and improving credit score?"
   },
   {
-    title: 'Help me write an essay',
-    subtitle: 'about silicon valley'
+    title: "What are the main differences",
+    subtitle: "between a Roth IRA and a Traditional IRA?"
   },
   {
-    title: 'What is the weather',
-    subtitle: 'in San Francisco?'
+    title: "Explain the concept of",
+    subtitle: "compound interest."
+  },
+  {
+    title: "What are the potential risks and rewards",
+    subtitle: "of investing in the stock market?"
+  },
+  {
+    title: "How do I create",
+    subtitle: "a realistic budget and stick to it?"
   }
 ]
 
@@ -129,9 +137,6 @@ export function Chat() {
       <header className="flex items-center justify-between border-b border-border px-4 py-2">
         <div className="flex items-center gap-4">
           <h1 className="text-lg font-semibold">FinSLM</h1>
-          <Button variant="outline" size="icon" className="h-8 w-8 rounded-lg">
-            <Plus className="h-4 w-4" />
-          </Button>
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
@@ -165,10 +170,7 @@ export function Chat() {
               </div>
             </div>
             <p className="mb-2 text-lg">
-              This is an <b>open source</b> chatbot built with <b>Next.js</b>. It uses a <b>small language model</b> fine-tuned on <b>financial data</b> to provide solutions to the user's query.
-            </p>
-            <p className="text-muted-foreground">
-              You can learn more about the AI SDK by visiting the <span className="underline">docs</span>.
+              This is an <b>open-source</b> chat application, built using <b>Next.js</b>. It leverages a compact, <b>finance-specific</b> language model to efficiently address user queries. The reduced parameter count facilitates rapid inference times.
             </p>
 
             {/* Example Prompts Grid */}
