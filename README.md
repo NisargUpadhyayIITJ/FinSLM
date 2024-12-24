@@ -1,4 +1,4 @@
-# Financial Chatbot - Hugging Face Integration
+# Financial Small Language Model
 
 A Next.js application that creates a chat interface for interacting with a fine-tuned financial model hosted on Hugging Face.
 
