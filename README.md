@@ -2,6 +2,10 @@
 
 A Next.js application that creates a chat interface for interacting with a fine-tuned financial model hosted on Hugging Face.
 
+## Try the app
+
+[FinSLM](https://finslm.netlify.app)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
