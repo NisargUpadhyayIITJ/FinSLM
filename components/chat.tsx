@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Plus, ChevronDown, ArrowUp } from 'lucide-react'
+import { Plus, ArrowUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Select,
