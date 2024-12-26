@@ -75,6 +75,12 @@ Open your browser and navigate to:
 ```plaintext
 http://localhost:3000
 ```
+In case of any error related to UI, run the command:
+
+```bash
+npm clean-install
+```
+
 ## Getting a Hugging Face API Token
 
 1. Go to https://huggingface.co/settings/tokens
