@@ -6,6 +6,12 @@ A Next.js application that creates a chat interface for interacting with a fine-
 
 [FinSLM](https://finslm.netlify.app)
 
+## Demo Video 
+
+<div align="center">
+  <img src="./assets/FinSLM_demo.gif" alt="gif" width="900"/>
+</div>
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -20,7 +26,7 @@ Clone the repository:
 
 ```bash
 git clone <repository-url>
-cd financial-chatbot
+cd FinSLM
 ```
 
 Install dependencies:
@@ -75,3 +81,40 @@ http://localhost:3000
 2. Click "New token"
 3. Give it a name and select appropriate permissions
 4. Copy the token to your .env.local file
+
+## Fine-tuning a model using torchtune
+
+Install torchtune
+
+```bash
+pip install torchtune
+```
+
+Download the models
+
+```bash
+tune download meta-llama/Meta-Llama-3.2-3B-Instruct --output-dir /tmp/Meta-Llama-3.2-3B-Instruct --ignore-patterns "original/consolidated.00.pth" --hf_token <HF_TOKEN>
+
+tune download meta-llama/Llama-3.2-1B-Instruct --output-dir /tmp/Llama-3.2-1B-Instruct --ignore-patterns "original/consolidated.00.pth" --hf_token <HF_TOKEN>
+```
+
+```bash
+cd fine_tune_with_KD
+```
+
+Then, we will fine-tune the teacher model. Based on our experiments and previous work, we’ve found that KD performs better when the teacher model is already fine-tuned on the target dataset.
+
+```bash
+tune run full_finetune_single_device --config custom_ft_3b_config.yaml
+```
+
+Finally, we can run the following command to distill the fine-tuned 3B model into the 1B model on a single GPU.
+
+```bash
+tune run knowledge_distillation_single_device --config custom_KD_3b-1b_config.yaml
+```
+
+The model with be stored in the /tmp/Llama-3.2-1B-Instruct directory.
+
+
+
